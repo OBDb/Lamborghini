@@ -13,7 +13,7 @@ permissions:
 
 # Make prefixes for this repo
 env:
-  FILTER_ARGS: --filter-prefix=Make1- --filter-prefix=Make2-
+  FILTER_ARGS: --filter-prefix=Lamborghini- --filter-prefix=Porsche- --filter-prefix=Audi- --filter-prefix=Volkswagen- --filter-prefix=Cupra- --filter-prefix=SEAT- --filter-prefix=Skoda- --filter-prefix=Bentley-
   SIGNAL_PREFIX: LAMBORGHINI
 
 concurrency:
@@ -130,3 +130,4 @@ jobs:
           git commit -m "Update signalsets from OBDb repositories [skip ci]"
           git push
           echo "commit_sha=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
+          
