@@ -13,7 +13,7 @@ permissions:
 
 # Make prefixes for this repo
 env:
-  FILTER_ARGS: --filter-prefix=Lamborghini- --filter-prefix=Porsche- --filter-prefix=Audi- --filter-prefix=Volkswagen- --filter-prefix=Cupra- --filter-prefix=SEAT- --filter-prefix=Skoda- --filter-prefix=Bentley-
+  FILTER_ARGS: --filter-prefix=Lamborghini- --filter-prefix=Porsche- --filter-prefix=Audi- --filter-prefix=Volkswagen- --filter-prefix=Cupra- --filter-prefix=SEAT- --filter-prefix=Seat- --filter-prefix=Skoda- --filter-prefix=Bentley-
   SIGNAL_PREFIX: LAMBORGHINI
 
 concurrency:
