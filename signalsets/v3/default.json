@@ -5,7 +5,8 @@
     { "hdr": "715", "type": "airbag" },
     { "hdr": "746", "type": "hvac" },
     { "hdr": "767", "type": "telematics" },
-    { "hdr": "7E1", "type": "transmission" }
+    { "hdr": "7E1", "type": "transmission" },
+    { "hdr": "7E5", "type": "battery" }
   ],
   "commands": [
 { "hdr": "70B", "rax": "775", "fcm1": true, "dbg": true, "cmd": {"22": "18A0"}, "freq": 5,
@@ -393,9 +394,9 @@
   ]},
 { "hdr": "710", "rax": "77A", "fcm1": true, "dbg": true, "cmd": {"22": "2AB8"}, "freq": 1,
   "signals": [
+    {"id": "LAMBORGHINI_HVBAT_E_CONTENT",    "path": "Battery", "fmt": {           "len": 16, "max": 1638.37, "mul": 25, "div": 1000,    "unit": "kilowattHours" }, "name": "HV battery energy content", "description": "Energy stored in the high voltage battery"},
     {"id": "LAMBORGHINI_BAT_ENERGY_CONTENT", "path": "Battery", "fmt": {           "len": 32, "max": 3276,               "div": 1310770, "unit": "kilowattHours" }, "name": "Battery energy content"},
-    {"id": "LAMBORGHINI_HVBAT_KWH",          "path": "Battery", "fmt": {"bix": 16, "len": 16, "max": 1000000, "mul": 25,                 "unit": "watts"         }, "name": "HV battery energy",         "description": "Energy stored in the high voltage battery"},
-    {"id": "LAMBORGHINI_HVBAT_E_CONTENT",    "path": "Battery", "fmt": {"bix": 16, "len": 16, "max": 1638.37, "mul": 25, "div": 1000,    "unit": "kilowattHours" }, "name": "HV battery energy content", "description": "Energy stored in the high voltage battery"}
+    {"id": "LAMBORGHINI_HVBAT_KWH",          "path": "Battery", "fmt": {"bix": 16, "len": 16, "max": 1000000, "mul": 25,                 "unit": "watts"         }, "name": "HV battery energy",         "description": "Energy stored in the high voltage battery"}
   ]},
 { "hdr": "710", "rax": "77A", "fcm1": true, "dbg": true, "cmd": {"22": "2AF7"}, "freq": 1,
   "signals": [
@@ -443,23 +444,27 @@
   ]},
 { "hdr": "713", "rax": "77D", "fcm1": true, "dbg": true, "cmd": {"22": "1800"}, "freq": 5,
   "signals": [
-    {"id": "LAMBORGHINI_FL_VSS_V2", "path": "Movement", "fmt": { "len": 16, "max": 6553.5, "div": 10, "unit": "kilometersPerHour" }, "name": "Front left wheel speed"},
-    {"id": "LAMBORGHINI_FL_VSS",    "path": "Movement", "fmt": { "len": 16, "max": 6553.5, "div": 10, "unit": "kilometers"        }, "name": "Front left wheel speed"}
+    {"id": "LAMBORGHINI_FL_VSS_V2",     "path": "Movement", "fmt": { "len": 16, "max": 6553.5, "div": 10, "unit": "kilometersPerHour" }, "name": "Front left wheel speed"},
+    {"id": "LAMBORGHINI_FL_VSS",        "path": "Movement", "fmt": { "len": 16, "max": 6553.5, "div": 10, "unit": "kilometers"        }, "name": "Front left wheel speed"},
+    {"id": "LAMBORGHINI_FL_VSS_V2_RAW", "path": "Movement", "fmt": { "len": 16, "max": 65535,             "unit": "scalar"            }, "name": "Front left wheel speed, raw count"}
   ]},
 { "hdr": "713", "rax": "77D", "fcm1": true, "dbg": true, "cmd": {"22": "1801"}, "freq": 5,
   "signals": [
-    {"id": "LAMBORGHINI_FR_VSS_V2", "path": "Movement", "fmt": { "len": 16, "max": 6553.5, "div": 10, "unit": "kilometersPerHour" }, "name": "Front right wheel speed"},
-    {"id": "LAMBORGHINI_FR_VSS",    "path": "Movement", "fmt": { "len": 16, "max": 6553.5, "div": 10, "unit": "kilometers"        }, "name": "Front right wheel speed"}
+    {"id": "LAMBORGHINI_FR_VSS_V2",     "path": "Movement", "fmt": { "len": 16, "max": 6553.5, "div": 10, "unit": "kilometersPerHour" }, "name": "Front right wheel speed"},
+    {"id": "LAMBORGHINI_FR_VSS",        "path": "Movement", "fmt": { "len": 16, "max": 6553.5, "div": 10, "unit": "kilometers"        }, "name": "Front right wheel speed"},
+    {"id": "LAMBORGHINI_FR_VSS_V2_RAW", "path": "Movement", "fmt": { "len": 16, "max": 65535,             "unit": "scalar"            }, "name": "Front right wheel speed, raw count"}
   ]},
 { "hdr": "713", "rax": "77D", "fcm1": true, "dbg": true, "cmd": {"22": "1802"}, "freq": 5,
   "signals": [
-    {"id": "LAMBORGHINI_RL_VSS_V2", "path": "Movement", "fmt": { "len": 16, "max": 6553.5, "div": 10, "unit": "kilometersPerHour" }, "name": "Rear left wheel speed"},
-    {"id": "LAMBORGHINI_RL_VSS",    "path": "Movement", "fmt": { "len": 16, "max": 6553.5, "div": 10, "unit": "kilometers"        }, "name": "Rear left wheel speed"}
+    {"id": "LAMBORGHINI_RL_VSS_V2",     "path": "Movement", "fmt": { "len": 16, "max": 6553.5, "div": 10, "unit": "kilometersPerHour" }, "name": "Rear left wheel speed"},
+    {"id": "LAMBORGHINI_RL_VSS",        "path": "Movement", "fmt": { "len": 16, "max": 6553.5, "div": 10, "unit": "kilometers"        }, "name": "Rear left wheel speed"},
+    {"id": "LAMBORGHINI_RL_VSS_V2_RAW", "path": "Movement", "fmt": { "len": 16, "max": 65535,             "unit": "scalar"            }, "name": "Rear left wheel speed, raw count"}
   ]},
 { "hdr": "713", "rax": "77D", "fcm1": true, "dbg": true, "cmd": {"22": "1803"}, "freq": 5,
   "signals": [
-    {"id": "LAMBORGHINI_RR_VSS_V2", "path": "Movement", "fmt": { "len": 16, "max": 6553.5, "div": 10, "unit": "kilometersPerHour" }, "name": "Rear right wheel speed"},
-    {"id": "LAMBORGHINI_RR_VSS",    "path": "Movement", "fmt": { "len": 16, "max": 6553.5, "div": 10, "unit": "kilometers"        }, "name": "Rear right wheel speed"}
+    {"id": "LAMBORGHINI_RR_VSS_V2",     "path": "Movement", "fmt": { "len": 16, "max": 6553.5, "div": 10, "unit": "kilometersPerHour" }, "name": "Rear right wheel speed"},
+    {"id": "LAMBORGHINI_RR_VSS",        "path": "Movement", "fmt": { "len": 16, "max": 6553.5, "div": 10, "unit": "kilometers"        }, "name": "Rear right wheel speed"},
+    {"id": "LAMBORGHINI_RR_VSS_V2_RAW", "path": "Movement", "fmt": { "len": 16, "max": 65535,             "unit": "scalar"            }, "name": "Rear right wheel speed, raw count"}
   ]},
 { "hdr": "713", "rax": "77D", "fcm1": true, "dbg": true, "cmd": {"22": "1804"}, "freq": 5,
   "signals": [
@@ -618,8 +623,8 @@
   ]},
 { "hdr": "714", "rax": "77E", "dbg": true, "cmd": {"22": "229A"}, "freq": 30,
   "signals": [
-    {"id": "LAMBORGHINI_FLV",    "path": "Fuel", "fmt": { "len": 16, "max": 255,      "div": 8, "unit": "liters" }, "name": "Fuel remaining",   "suggestedMetric": "fuelTankLevel"},
-    {"id": "LAMBORGHINI_FLI_V2", "path": "Fuel", "fmt": { "len": 16, "max": 8191.875, "div": 8, "unit": "liters" }, "name": "Fuel level input", "suggestedMetric": "fuelTankLevel"}
+    {"id": "LAMBORGHINI_FLV",     "path": "Fuel", "fmt": { "len": 16, "max": 255,      "div": 8, "unit": "liters" }, "name": "Fuel remaining",   "suggestedMetric": "fuelTankLevel"},
+    {"id": "LAMBORGHINI_FLI_714", "path": "Fuel", "fmt": { "len": 16, "max": 8191.875, "div": 8, "unit": "liters" }, "name": "Fuel level input", "suggestedMetric": "fuelTankLevel"}
   ]},
 { "hdr": "714", "rax": "77E", "dbg": true, "cmd": {"22": "22B0"}, "freq": 30,
   "signals": [
@@ -627,7 +632,8 @@
   ]},
 { "hdr": "714", "rax": "77E", "fcm1": true, "dbg": true, "cmd": {"22": "22B8"}, "freq": 30,
   "signals": [
-    {"id": "LAMBORGHINI_ODO_MILEAGE_HR", "path": "Trips", "fmt": { "len": 32, "max": 4294967, "div": 1000, "unit": "kilometers" }, "name": "Odometer, mileage, HR"}
+    {"id": "LAMBORGHINI_ODO_MILEAGE_HR",      "path": "Trips", "fmt": { "len": 32, "max": 4294967, "div": 1000, "unit": "kilometers" }, "name": "Odometer, mileage, HR"},
+    {"id": "LAMBORGHINI_TRON_ODO_MILEAGE_HR", "path": "Trips", "fmt": { "len": 32, "max": 4294967, "div": 1000, "unit": "kilometers" }, "name": "Odometer, mileage, HR", "suggestedMetric": "odometer"}
   ]},
 { "hdr": "714", "rax": "77E", "dbg": true, "cmd": {"22": "22E0"}, "freq": 1,
   "signals": [
@@ -925,13 +931,15 @@
   ]},
 { "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "2609"}, "freq": 5,
   "signals": [
-    {"id": "LAMBORGHINI_AAT_746", "path": "Climate", "fmt": { "len": 16, "max": 3276.7, "min": -3276.8, "div": 10, "sign": true, "unit": "celsius" }, "name": "Outside temperature"},
-    {"id": "LAMBORGHINI_AAT_V2",  "path": "Climate", "fmt": { "len": 8,  "max": 63.5,   "min": -64,     "div": 2,  "sign": true, "unit": "celsius" }, "name": "Outside temperature"}
+    {"id": "LAMBORGHINI_AAT_746",  "path": "Climate", "fmt": { "len": 16, "max": 3276.7, "min": -3276.8, "div": 10, "sign": true,                 "unit": "celsius" }, "name": "Outside temperature"},
+    {"id": "LAMBORGHINI_AAT_V2",   "path": "Climate", "fmt": { "len": 8,  "max": 63.5,   "min": -64,     "div": 2,  "sign": true,                 "unit": "celsius" }, "name": "Outside temperature"},
+    {"id": "LAMBORGHINI_TRON_AAT", "path": "Climate", "fmt": { "len": 16, "max": 100,    "min": -3276.8, "div": 10, "sign": true, "nullmax": 100, "unit": "celsius" }, "name": "Outside temperature"}
   ]},
 { "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "260A"}, "freq": 5,
   "signals": [
-    {"id": "LAMBORGHINI_OUTSIDE_T_SYSTEM", "path": "Engine",  "fmt": { "len": 16, "max": 3276.7, "min": -3276.8, "div": 10,             "sign": true, "unit": "celsius" }, "name": "Outside temperature, system calculated"},
-    {"id": "LAMBORGHINI_AAT_CABIN",        "path": "Climate", "fmt": { "len": 8,  "max": 77.5,   "min": -50,     "div": 2,  "add": -50,               "unit": "celsius" }, "name": "Outside temperature, from cabin sensor"}
+    {"id": "LAMBORGHINI_OUTSIDE_T_SYSTEM",      "path": "Engine",  "fmt": { "len": 16, "max": 3276.7, "min": -3276.8, "div": 10,             "sign": true, "unit": "celsius" }, "name": "Outside temperature, system calculated"},
+    {"id": "LAMBORGHINI_AAT_CABIN",             "path": "Climate", "fmt": { "len": 8,  "max": 77.5,   "min": -50,     "div": 2,  "add": -50,               "unit": "celsius" }, "name": "Outside temperature, from cabin sensor"},
+    {"id": "LAMBORGHINI_TRON_OUTSIDE_T_SYSTEM", "path": "Engine",  "fmt": { "len": 8,  "max": 63.5,   "min": -64,     "div": 2,              "sign": true, "unit": "celsius" }, "name": "Outside temperature, system calculated"}
   ]},
 { "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "260C"}, "freq": 5,
   "signals": [
@@ -956,7 +964,8 @@
   ]},
 { "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "2613"}, "freq": 5,
   "signals": [
-    {"id": "LAMBORGHINI_CABIN_T", "path": "Engine", "fmt": { "len": 16, "max": 3276.7, "min": -3276.8, "div": 10, "sign": true, "unit": "celsius" }, "name": "Cabin temperature"}
+    {"id": "LAMBORGHINI_CABIN_T",    "path": "Engine", "fmt": { "len": 16, "max": 3276.7, "min": -3276.8, "div": 10,  "sign": true, "unit": "celsius" }, "name": "Cabin temperature"},
+    {"id": "LAMBORGHINI_C7_CABIN_T", "path": "Engine", "fmt": { "len": 16, "max": 127.99, "min": -128,    "div": 256, "sign": true, "unit": "celsius" }, "name": "Cabin temperature"}
   ]},
 { "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "261E"}, "freq": 5,
   "signals": [
@@ -1106,14 +1115,16 @@
   ]},
 { "hdr": "7E0", "dbg": true, "cmd": {"22": "295A"}, "freq": 30,
   "signals": [
-    {"id": "LAMBORGHINI_ODO",         "path": "Trips", "fmt": { "len": 24, "max": 16777215,   "unit": "kilometers" }, "name": "Odometer",              "suggestedMetric": "odometer"},
-    {"id": "LAMBORGHINI_ODO_2_V2",    "path": "Trips", "fmt": { "len": 32, "max": 4294967295, "unit": "kilometers" }, "name": "Odometer, alternative", "suggestedMetric": "odometer"},
-    {"id": "LAMBORGHINI_ODO_MILEAGE", "path": "Trips", "fmt": { "len": 24, "max": 16777215,   "unit": "kilometers" }, "name": "Odometer, mileage"}
+    {"id": "LAMBORGHINI_ODO",         "path": "Trips", "fmt": { "len": 24, "max": 16777215,                       "unit": "kilometers" }, "name": "Odometer",              "suggestedMetric": "odometer"},
+    {"id": "LAMBORGHINI_ODO_2_V2",    "path": "Trips", "fmt": { "len": 32, "max": 4294967295,                     "unit": "kilometers" }, "name": "Odometer, alternative", "suggestedMetric": "odometer"},
+    {"id": "LAMBORGHINI_ODO_ECM",     "path": "Trips", "fmt": { "len": 24, "max": 1048575,    "nullmax": 1048575, "unit": "kilometers" }, "name": "Odometer",              "suggestedMetric": "odometer"},
+    {"id": "LAMBORGHINI_ODO_MILEAGE", "path": "Trips", "fmt": { "len": 24, "max": 16777215,                       "unit": "kilometers" }, "name": "Odometer, mileage"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "028D"}, "freq": 1,
   "signals": [
     {"id": "LAMBORGHINI_ECU_TEMP",          "path": "Engine", "fmt": { "len": 16, "max": 6280.4, "min": -273.1,  "div": 10, "add": -273.1,               "nullmin": -273.1, "unit": "celsius" }, "name": "Control module temperature"},
     {"id": "LAMBORGHINI_ENG_CTRL_MODULE_T", "path": "Engine", "fmt": { "len": 16, "max": 3276.7, "min": -3276.8, "div": 10,                "sign": true,                    "unit": "celsius" }, "name": "Engine control module temperature"},
+    {"id": "LAMBORGHINI_ECU_TEMP_KELVIN",   "path": "Engine", "fmt": { "len": 16, "max": 150,    "min": -40,     "div": 10, "add": -273.1, "sign": true,                    "unit": "celsius" }, "name": "Control module temperature"},
     {"id": "LAMBORGHINI_ECU_TEMP_K",        "path": "Engine", "fmt": { "len": 16, "max": 6280.4, "min": -273.1,  "div": 10, "add": -273.1,                                  "unit": "celsius" }, "name": "Control module temperature"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "0802"}, "freq": 1,
@@ -1335,7 +1346,8 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "din": "03", "dbg": true, "cmd": {"22": "105E"}, "freq": 5,
   "signals": [
-    {"id": "LAMBORGHINI_BAT_V_2", "path": "Battery", "fmt": { "len": 16, "max": 1310.7, "div": 50, "unit": "volts" }, "name": "Battery voltage variant"}
+    {"id": "LAMBORGHINI_BAT_V_2",      "path": "Battery", "fmt": { "len": 16, "max": 1310.7, "div": 50,                "unit": "volts" }, "name": "Battery voltage variant"},
+    {"id": "LAMBORGHINI_PQ35_BAT_V_2", "path": "Battery", "fmt": { "len": 16, "max": 20,     "div": 50, "nullmax": 20, "unit": "volts" }, "name": "Battery voltage variant"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1063"}, "freq": 5,
   "signals": [
@@ -1589,7 +1601,8 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "10F9"}, "freq": 1,
   "signals": [
-    {"id": "LAMBORGHINI_PQ35_DPF_OUT_T", "path": "Engine", "fmt": { "len": 16, "max": 6280.4, "min": -273.1, "div": 10, "add": -273.1, "unit": "celsius" }, "name": "Diesel particulate filter outlet temperature"}
+    {"id": "LAMBORGHINI_PQ35_DPF_OUT_T",  "path": "Engine", "fmt": { "len": 16, "max": 6280.4, "min": -273.1, "div": 10, "add": -273.1, "unit": "celsius" }, "name": "Diesel particulate filter outlet temperature"},
+    {"id": "LAMBORGHINI_EARLY_DPF_OUT_T", "path": "Engine", "fmt": { "len": 16, "max": 1200,                  "div": 10,                "unit": "celsius" }, "name": "Diesel particulate filter outlet temperature"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "10FA"}, "freq": 1,
   "signals": [
@@ -1736,8 +1749,8 @@
   "signals": [
     {"id": "LAMBORGHINI_SPARK_EFF_DEV_PART",      "path": "Engine", "fmt": { "len": 8,  "max": 100,                    "mul": 78.1,  "div": 100,                     "unit": "percent" }, "name": "Spark efficiency deviation at part load"},
     {"id": "LAMBORGHINI_SPARK_EFFICIENCY_DEV_V2", "path": "Engine", "fmt": { "len": 8,  "max": 199,                    "mul": 781,   "div": 1000,                    "unit": "percent" }, "name": "Spark efficiency deviation at part load"},
-    {"id": "LAMBORGHINI_SPARK_EFF_DEV",           "path": "Engine", "fmt": { "len": 8,  "max": 199.14,                 "mul": 78.1,  "div": 100,                     "unit": "percent" }, "name": "Spark efficiency deviation at part load"},
-    {"id": "LAMBORGHINI_SEG_AD_MMV_ER_1",         "path": "Engine", "fmt": { "len": 16, "max": 7.8123, "min": -7.8125, "mul": 78123, "div": 327670000, "sign": true, "unit": "percent" }, "name": "SEG_AD_MMV_ER, 1"}
+    {"id": "LAMBORGHINI_SEG_AD_MMV_ER_1",         "path": "Engine", "fmt": { "len": 16, "max": 7.8123, "min": -7.8125, "mul": 78123, "div": 327670000, "sign": true, "unit": "percent" }, "name": "SEG_AD_MMV_ER, 1"},
+    {"id": "LAMBORGHINI_SPARK_EFF_DEV",           "path": "Engine", "fmt": { "len": 8,  "max": 199.14,                 "mul": 78.1,  "div": 100,                     "unit": "percent" }, "name": "Spark efficiency deviation at part load"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "112E"}, "freq": 1,
   "signals": [
@@ -1771,7 +1784,8 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1135"}, "freq": 5,
   "signals": [
-    {"id": "LAMBORGHINI_COOLANT_T", "path": "Engine", "fmt": { "len": 16, "max": 6280.4, "min": -273.1, "div": 10, "add": -273.1, "unit": "celsius" }, "name": "Coolant temperature at radiator outlet"}
+    {"id": "LAMBORGHINI_COOLANT_T",       "path": "Engine", "fmt": { "len": 16, "max": 6280.4, "min": -273.1, "div": 10, "add": -273.1, "unit": "celsius" }, "name": "Coolant temperature at radiator outlet"},
+    {"id": "LAMBORGHINI_EARLY_COOLANT_T", "path": "Engine", "fmt": { "len": 16, "max": 300,                   "div": 10,                "unit": "celsius" }, "name": "Coolant temperature at radiator outlet"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1136"}, "freq": 1,
   "signals": [
@@ -1829,13 +1843,13 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1148"}, "freq": 1,
   "signals": [
-    {"id": "LAMBORGHINI_FUEL_METER",          "path": "Engine", "fmt": { "len": 16, "max": 100,   "div": 100, "sign": true, "unit": "percent" }, "name": "Fuel metering valve position"},
-    {"id": "LAMBORGHINI_MISFIRES_1000REV_C3", "path": "Engine", "fmt": { "len": 16, "max": 65535,                           "unit": "scalar"  }, "name": "Misfires / 1000 revolutions, cylinder 3"}
+    {"id": "LAMBORGHINI_FUEL_METER",      "path": "Engine", "fmt": { "len": 16, "max": 100,   "div": 100, "sign": true, "unit": "percent" }, "name": "Fuel metering valve position"},
+    {"id": "LAMBORGHINI_PQ35_FUEL_METER", "path": "Engine", "fmt": { "len": 16, "max": 65535,                           "unit": "scalar"  }, "name": "Misfires / 1000 revolutions, cylinder 3"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1149"}, "freq": 1,
   "signals": [
-    {"id": "LAMBORGHINI_BOOST_P_CMD",         "path": "Engine", "fmt": { "len": 16, "max": 32767, "min": -32768, "sign": true, "unit": "unknown" }, "name": "Boost pressure commanded"},
-    {"id": "LAMBORGHINI_MISFIRES_1000REV_C4", "path": "Engine", "fmt": { "len": 16, "max": 65535,                              "unit": "scalar"  }, "name": "Misfires / 1000 revolutions, cylinder 4"}
+    {"id": "LAMBORGHINI_BOOST_P_CMD",      "path": "Engine", "fmt": { "len": 16, "max": 32767, "min": -32768, "sign": true, "unit": "unknown" }, "name": "Boost pressure commanded"},
+    {"id": "LAMBORGHINI_PQ35_BOOST_P_CMD", "path": "Engine", "fmt": { "len": 16, "max": 65535,                              "unit": "scalar"  }, "name": "Misfires / 1000 revolutions, cylinder 4"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "114A"}, "freq": 1,
   "signals": [
@@ -2049,8 +2063,8 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "11B2"}, "freq": 5,
   "signals": [
-    {"id": "LAMBORGHINI_EXH_GAS_T_SENS_3_V2", "path": "Engine", "fmt": { "len": 16, "max": 6280,   "min": -273,   "div": 10, "add": -273.1, "unit": "celsius" }, "name": "Exhaust gas temperature sensor 3"},
-    {"id": "LAMBORGHINI_PQ35_DPF_IN_T",       "path": "Engine", "fmt": { "len": 16, "max": 6280.4, "min": -273.1, "div": 10, "add": -273.1, "unit": "celsius" }, "name": "Diesel particulate filter inlet temperature"}
+    {"id": "LAMBORGHINI_EXH_GAS_T_SENS_3_V2", "path": "Engine", "fmt": { "len": 16, "max": 6280,   "min": -273,   "div": 10, "add": -273.1,                    "unit": "celsius" }, "name": "Exhaust gas temperature sensor 3"},
+    {"id": "LAMBORGHINI_PQ35_DPF_IN_T",       "path": "Engine", "fmt": { "len": 16, "max": 6280.4, "min": -273.1, "div": 10, "add": -273.1, "nullmin": -273.1, "unit": "celsius" }, "name": "Diesel particulate filter inlet temperature"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "din": "03", "dbg": true, "cmd": {"22": "11B5"}, "freq": 5,
   "signals": [
@@ -2081,9 +2095,10 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "11BE"}, "freq": 1,
   "signals": [
-    {"id": "LAMBORGHINI_EOT_V2",       "path": "Engine", "fmt": { "len": 16, "max": 65535,                                                                           "unit": "scalar"  }, "name": "Engine oil temperature",  "description": "Scaling is unknown, needs further validation."},
-    {"id": "LAMBORGHINI_PQ35_OIL_T_2", "path": "Engine", "fmt": { "len": 16, "max": 6280.4, "min": -273.1, "div": 10, "add": -273.1,                                 "unit": "celsius" }, "name": "Oil temperature variant"},
-    {"id": "LAMBORGHINI_EOT_V2",       "path": "Engine", "fmt": { "len": 16, "max": 500,    "min": -40,    "div": 10, "add": -273.1, "nullmin": -40, "nullmax": 500, "unit": "celsius" }, "name": "Engine oil temperature",  "suggestedMetric": "engineOilTemperature"}
+    {"id": "LAMBORGHINI_EOT_V2",       "path": "Engine", "fmt": { "len": 16, "max": 65535,                                                                                         "unit": "scalar"  }, "name": "Engine oil temperature",  "description": "Scaling is unknown, needs further validation."},
+    {"id": "LAMBORGHINI_PQ35_OIL_T_2", "path": "Engine", "fmt": { "len": 16, "max": 6280.4, "min": -273.1, "div": 10, "add": -273.1,                                               "unit": "celsius" }, "name": "Oil temperature variant"},
+    {"id": "LAMBORGHINI_EOT_V2",       "path": "Engine", "fmt": { "len": 16, "max": 500,    "min": -40,    "div": 10, "add": -273.1,               "nullmin": -40, "nullmax": 500, "unit": "celsius" }, "name": "Engine oil temperature",  "suggestedMetric": "engineOilTemperature"},
+    {"id": "LAMBORGHINI_PQ46_OIL_T_2", "path": "Engine", "fmt": { "len": 16, "max": 300,    "min": -40,    "div": 10,                "sign": true,                                 "unit": "celsius" }, "name": "Oil temperature variant", "suggestedMetric": "engineOilTemperature"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "11BF"}, "freq": 1,
   "signals": [
@@ -2189,7 +2204,8 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "11F1"}, "freq": 0.25,
   "signals": [
-    {"id": "LAMBORGHINI_TRANS_IN_SPD", "path": "Movement", "fmt": { "len": 16, "max": 16383.5, "min": -16384, "div": 2, "sign": true, "unit": "rpm" }, "name": "Transmission input shaft speed"}
+    {"id": "LAMBORGHINI_TRANS_IN_SPD",      "path": "Movement", "fmt": { "len": 16, "max": 10000,   "min": -16384, "div": 2, "sign": true, "nullmax": 10000, "unit": "rpm" }, "name": "Transmission input shaft speed"},
+    {"id": "LAMBORGHINI_PQ35_TRANS_IN_SPD", "path": "Movement", "fmt": { "len": 16, "max": 16383.5, "min": -16384, "div": 2, "sign": true,                   "unit": "rpm" }, "name": "Transmission input shaft speed"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "11F2"}, "freq": 1,
   "signals": [
@@ -2903,7 +2919,7 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1515"}, "freq": 5,
   "signals": [
-    {"id": "LAMBORGHINI_CAT_T_CALC", "path": "Engine", "fmt": { "len": 16, "max": 327625, "min": -50, "mul": 5, "add": -50, "unit": "celsius" }, "name": "Catalyst temperature, calculated"}
+    {"id": "LAMBORGHINI_CAT_T_CALC", "path": "Engine", "fmt": { "len": 8, "max": 1225, "min": -50, "mul": 5, "add": -50, "unit": "celsius" }, "name": "Catalyst temperature, calculated"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1519"}, "freq": 1,
   "signals": [
@@ -3036,7 +3052,8 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "162D"}, "freq": 5,
   "signals": [
-    {"id": "LAMBORGHINI_FUEL_T_7E0", "path": "Engine", "fmt": { "len": 16, "max": 6280.4, "min": -273.1, "div": 10, "add": -273.1, "unit": "celsius" }, "name": "Fuel temperature"}
+    {"id": "LAMBORGHINI_FUEL_T_7E0",  "path": "Engine", "fmt": { "len": 16, "max": 300,    "min": -40,    "div": 10, "add": -273.1, "nullmin": -40, "nullmax": 300, "unit": "celsius" }, "name": "Fuel temperature"},
+    {"id": "LAMBORGHINI_PQ35_FUEL_T", "path": "Engine", "fmt": { "len": 16, "max": 6280.4, "min": -273.1, "div": 10, "add": -273.1,                                 "unit": "celsius" }, "name": "Fuel temperature"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1631"}, "freq": 1,
   "signals": [
@@ -3260,11 +3277,11 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1798"}, "freq": 5,
   "signals": [
-    {"id": "LAMBORGHINI_CHARGE_AIR_T_TUBROCHARGER_OUTLET_CALCULATED", "path": "Battery", "fmt": { "len": 16, "max": 3003.6, "min": -3549.9, "mul": 1000, "div": 10000, "add": -273.1, "sign": true, "unit": "celsius" }, "name": "Charge air temp at the turbocharger outlet, calculated"}
+    {"id": "LAMBORGHINI_CHARGE_AIR_T_TUBROCHARGER_OUTLET_CALCULATED", "path": "Battery", "fmt": { "len": 16, "max": 3003.6, "min": -273.1, "mul": 1000, "div": 10000, "add": -273.1, "sign": true, "nullmin": -273.1, "unit": "celsius" }, "name": "Charge air temp at the turbocharger outlet, calculated"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "179C"}, "freq": 5,
   "signals": [
-    {"id": "LAMBORGHINI_ENGINE_OIL_T_2",      "path": "Engine", "fmt": { "len": 16, "max": 6280.4, "min": -273.1, "div": 10, "add": -273.1,                    "unit": "celsius" }, "name": "Oil temp 2"},
+    {"id": "LAMBORGHINI_ENGINE_OIL_T_2",      "path": "Engine", "fmt": { "len": 16, "max": 6280.4, "min": -273.1, "div": 10, "add": -273.1, "nullmin": -273.1, "unit": "celsius" }, "name": "Oil temp 2"},
     {"id": "LAMBORGHINI_PQ35_ENGINE_OIL_T_2", "path": "Engine", "fmt": { "len": 16, "max": 6280.4, "min": -273.1, "div": 10, "add": -273.1, "nullmin": -273.1, "unit": "celsius" }, "name": "Engine oil temperature 2", "suggestedMetric": "engineOilTemperature"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "179E"}, "freq": 5,
@@ -4771,7 +4788,8 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "F431"}, "freq": 5,
   "signals": [
-    {"id": "LAMBORGHINI_CLR_DIST", "path": "DTCs", "fmt": { "len": 16, "max": 65535, "unit": "kilometers" }, "name": "Distance traveled since dtcs cleared"}
+    {"id": "LAMBORGHINI_CLR_DIST",      "path": "DTCs", "fmt": { "len": 16, "max": 65535, "unit": "kilometers" }, "name": "Distance traveled since dtcs cleared"},
+    {"id": "LAMBORGHINI_TRON_CLR_DIST", "path": "DTCs", "fmt": { "len": 16, "max": 65535, "unit": "kilometers" }, "name": "Distance traveled since diagnostic trouble codes cleared", "suggestedMetric": "distanceSinceDTCsCleared"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "F433"}, "freq": 1,
   "signals": [
@@ -4783,8 +4801,8 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "F442"}, "freq": 0.25,
   "signals": [
-    {"id": "LAMBORGHINI_VPWR",   "path": "Battery", "fmt": { "len": 16, "max": 65, "div": 1000, "unit": "volts" }, "name": "Control module voltage"},
-    {"id": "LAMBORGHINI_KL30_V", "path": "Battery", "fmt": { "len": 16, "max": 65, "div": 1000, "unit": "volts" }, "name": "Terminal 30 voltage",    "suggestedMetric": "starterBatteryVoltage"}
+    {"id": "LAMBORGHINI_VPWR",      "path": "Battery", "fmt": { "len": 16, "max": 65, "div": 1000, "unit": "volts" }, "name": "Control module voltage"},
+    {"id": "LAMBORGHINI_TRON_VPWR", "path": "Battery", "fmt": { "len": 16, "max": 65, "div": 1000, "unit": "volts" }, "name": "Control module voltage", "suggestedMetric": "starterBatteryVoltage"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "F446"}, "freq": 5,
   "signals": [
@@ -4852,23 +4870,27 @@
   ]},
 { "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "1001"}, "freq": 0.25,
   "signals": [
-    {"id": "LAMBORGHINI_TIRE_FR_SPD_V2",  "path": "Movement", "fmt": { "len": 16, "max": 255, "div": 10, "nullmax": 255, "unit": "kilometersPerHour" }, "name": "Front right wheel speed"},
-    {"id": "LAMBORGHINI_TIRE_FR_SPD_7E1", "path": "Movement", "fmt": { "len": 16, "max": 255, "div": 10,                 "unit": "kilometersPerHour" }, "name": "Front right wheel speed"}
+    {"id": "LAMBORGHINI_TIRE_FR_SPD_V2",  "path": "Movement", "fmt": { "len": 16, "max": 255,    "div": 10,  "nullmax": 255, "unit": "kilometersPerHour" }, "name": "Front right wheel speed"},
+    {"id": "LAMBORGHINI_TIRE_FR_SPD_7E1", "path": "Movement", "fmt": { "len": 16, "max": 655.35, "div": 100,                 "unit": "kilometersPerHour" }, "name": "Front right wheel speed"},
+    {"id": "LAMBORGHINI_TIRE_FR_SPD_V3",  "path": "Movement", "fmt": { "len": 16, "max": 255,    "div": 10,                  "unit": "kilometersPerHour" }, "name": "Front right wheel speed"}
   ]},
 { "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "1002"}, "freq": 0.25,
   "signals": [
-    {"id": "LAMBORGHINI_TIRE_FL_SPD_V2",  "path": "Movement", "fmt": { "len": 16, "max": 255, "div": 10, "nullmax": 255, "unit": "kilometersPerHour" }, "name": "Front left wheel speed"},
-    {"id": "LAMBORGHINI_TIRE_FL_SPD_7E1", "path": "Movement", "fmt": { "len": 16, "max": 255, "div": 10,                 "unit": "kilometersPerHour" }, "name": "Front left wheel speed"}
+    {"id": "LAMBORGHINI_TIRE_FL_SPD_V2",  "path": "Movement", "fmt": { "len": 16, "max": 255,    "div": 10,  "nullmax": 255, "unit": "kilometersPerHour" }, "name": "Front left wheel speed"},
+    {"id": "LAMBORGHINI_TIRE_FL_SPD_7E1", "path": "Movement", "fmt": { "len": 16, "max": 655.35, "div": 100,                 "unit": "kilometersPerHour" }, "name": "Front left wheel speed"},
+    {"id": "LAMBORGHINI_TIRE_FL_SPD_V3",  "path": "Movement", "fmt": { "len": 16, "max": 255,    "div": 10,                  "unit": "kilometersPerHour" }, "name": "Front left wheel speed"}
   ]},
 { "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "1003"}, "freq": 0.25,
   "signals": [
-    {"id": "LAMBORGHINI_TIRE_RR_SPD_V2",  "path": "Movement", "fmt": { "len": 16, "max": 255, "div": 10, "nullmax": 255, "unit": "kilometersPerHour" }, "name": "Rear right wheel speed"},
-    {"id": "LAMBORGHINI_TIRE_RR_SPD_7E1", "path": "Movement", "fmt": { "len": 16, "max": 255, "div": 10,                 "unit": "kilometersPerHour" }, "name": "Rear right wheel speed"}
+    {"id": "LAMBORGHINI_TIRE_RR_SPD_V2",  "path": "Movement", "fmt": { "len": 16, "max": 255,    "div": 10,  "nullmax": 255, "unit": "kilometersPerHour" }, "name": "Rear right wheel speed"},
+    {"id": "LAMBORGHINI_TIRE_RR_SPD_7E1", "path": "Movement", "fmt": { "len": 16, "max": 655.35, "div": 100,                 "unit": "kilometersPerHour" }, "name": "Rear right wheel speed"},
+    {"id": "LAMBORGHINI_TIRE_RR_SPD_V3",  "path": "Movement", "fmt": { "len": 16, "max": 255,    "div": 10,                  "unit": "kilometersPerHour" }, "name": "Rear right wheel speed"}
   ]},
 { "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "1004"}, "freq": 0.25,
   "signals": [
-    {"id": "LAMBORGHINI_TIRE_RL_SPD_V2",  "path": "Movement", "fmt": { "len": 16, "max": 255, "div": 10, "nullmax": 255, "unit": "kilometersPerHour" }, "name": "Rear left wheel speed"},
-    {"id": "LAMBORGHINI_TIRE_RL_SPD_7E1", "path": "Movement", "fmt": { "len": 16, "max": 255, "div": 10,                 "unit": "kilometersPerHour" }, "name": "Rear left wheel speed"}
+    {"id": "LAMBORGHINI_TIRE_RL_SPD_V2",  "path": "Movement", "fmt": { "len": 16, "max": 255,    "div": 10,  "nullmax": 255, "unit": "kilometersPerHour" }, "name": "Rear left wheel speed"},
+    {"id": "LAMBORGHINI_TIRE_RL_SPD_7E1", "path": "Movement", "fmt": { "len": 16, "max": 655.35, "div": 100,                 "unit": "kilometersPerHour" }, "name": "Rear left wheel speed"},
+    {"id": "LAMBORGHINI_TIRE_RL_SPD_V3",  "path": "Movement", "fmt": { "len": 16, "max": 255,    "div": 10,                  "unit": "kilometersPerHour" }, "name": "Rear left wheel speed"}
   ]},
 { "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "1005"}, "freq": 0.25,
   "signals": [
@@ -5540,7 +5562,9 @@
   ]},
 { "hdr": "7E1", "rax": "7E9", "fcm1": true, "dbg": true, "cmd": {"22": "120F"}, "freq": 5,
   "signals": [
-    {"id": "LAMBORGHINI_CLU_0_T_CALC", "path": "Transmission", "fmt": { "len": 16, "max": 32767, "min": -32768, "sign": true, "unit": "celsius" }, "name": "Clutch_0 temperature calculated"}
+    {"id": "LAMBORGHINI_CLU_0_T_CALC",                    "path": "Transmission", "fmt": { "len": 16, "max": 32767, "min": -32768,            "sign": true, "unit": "celsius" }, "name": "Clutch_0 temperature calculated"},
+    {"id": "LAMBORGHINI_C7_CLUTCH_0_T_CALCULATED",        "path": "Engine",       "fmt": { "len": 16, "max": 600,   "min": -40,    "div": 10, "sign": true, "unit": "celsius" }, "name": "Clutch 0 temperature calculated"},
+    {"id": "LAMBORGHINI_MQB_DL382_CLUTCH_0_T_CALCULATED", "path": "Engine",       "fmt": { "len": 16, "max": 600,   "min": -40,               "sign": true, "unit": "celsius" }, "name": "Clutch 0 temperature calculated"}
   ]},
 { "hdr": "7E1", "rax": "7E9", "fcm1": true, "dbg": true, "cmd": {"22": "1259"}, "freq": 5,
   "signals": [
@@ -5871,10 +5895,10 @@
   ]},
 { "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "3841"}, "freq": 30,
   "signals": [
-    {"id": "LAMBORGHINI_ODO_MILEAGE_1", "path": "Trips", "fmt": { "len": 24, "max": 16777215,                                             "unit": "kilometers" },                   "name": "Odometer, mileage 1"},
-    {"id": "LAMBORGHINI_MQB_TCM_ODO",   "path": "Trips", "fmt": { "len": 32, "max": 429496729.5,                    "div": 10,            "unit": "kilometers" },                   "name": "Odometer",            "suggestedMetric": "odometer"},
-    {"id": "LAMBORGHINI_ODO_TCM_1",     "path": "Trips", "fmt": { "len": 32, "blsb": true,       "max": 4294967295,                                            "unit": "kilometers" },                             "name": "Odometer (TCM #1)",   "suggestedMetric": "odometer"},
-    {"id": "LAMBORGHINI_ODO_V1",        "path": "Trips", "fmt": { "len": 32, "blsb": true,       "max": 429496729,             "div": 10,                      "unit": "kilometers" },                             "name": "Odometer",            "suggestedMetric": "odometer"}
+    {"id": "LAMBORGHINI_ODO_MILEAGE_1", "path": "Trips", "fmt": { "len": 24, "max": 16777215,                                  "unit": "kilometers" },                   "name": "Odometer, mileage 1"},
+    {"id": "LAMBORGHINI_MQB_TCM_ODO",   "path": "Trips", "fmt": { "len": 32, "max": 429496729.5,                    "div": 10, "unit": "kilometers" },                   "name": "Odometer",            "suggestedMetric": "odometer"},
+    {"id": "LAMBORGHINI_ODO_TCM_1",     "path": "Trips", "fmt": { "len": 32, "blsb": true,       "max": 4294967295,                                 "unit": "kilometers" },                             "name": "Odometer (TCM #1)",   "suggestedMetric": "odometer"},
+    {"id": "LAMBORGHINI_ODO_V1",        "path": "Trips", "fmt": { "len": 32, "max": 429496729.5,                    "div": 10, "unit": "kilometers" },                   "name": "Odometer"}
   ]},
 { "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "3852"}, "freq": 0.25,
   "signals": [
@@ -6057,13 +6081,13 @@
   "signals": [
     {"id": "LAMBORGHINI_ATF_T_CALCULATED", "path": "Engine", "fmt": { "len": 8, "max": 205, "min": -50, "add": -50, "unit": "celsius" }, "name": "Transmission fluid temperature, calculated", "suggestedMetric": "transmissionFluidTemperature"}
   ]},
-{ "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "704F"}, "freq": 1,
+{ "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "704F"}, "freq": 3600,
   "signals": [
     {"id": "LAMBORGHINI_ATF_MAX", "path": "Engine", "fmt": { "len": 8, "max": 205, "min": -50, "add": -50, "unit": "celsius" }, "name": "Automatic transmission fluid temperature, lifetime max"}
   ]},
 { "hdr": "7E1", "rax": "7E9", "pri": "17", "fcm1": true, "dbg": true, "cmd": {"22": "7050"}, "freq": 0.25,
   "signals": [
-    {"id": "LAMBORGHINI_SELECTED_GEAR_V2", "path": "Transmission", "fmt": { "len": 8, "max": 253, "min": -2, "add": -2, "unit": "scalar" }, "name": "Selected gear"}
+    {"id": "LAMBORGHINI_SELECTED_GEAR_V2", "path": "Transmission", "fmt": { "len": 8, "max": 253, "min": -2, "add": -2, "unit": "celsius" }, "name": "Selected gear"}
   ]},
 { "hdr": "7E1", "rax": "7E9", "pri": "17", "fcm1": true, "dbg": true, "cmd": {"22": "7051"}, "freq": 3600,
   "signals": [
@@ -8053,7 +8077,8 @@
   ]},
 { "hdr": "FC00", "rax": "FE0076", "pri": "17", "tst": "76", "dbg": true, "cmd": {"22": "3DEF"}, "freq": 1,
   "signals": [
-    {"id": "LAMBORGHINI_SOC_FC00", "path": "Battery", "fmt": { "len": 16, "max": 100, "div": 100, "sign": true, "unit": "percent" }, "name": "State of charge", "suggestedMetric": "stateOfCharge"}
+    {"id": "LAMBORGHINI_SOC_FC00", "path": "Battery", "fmt": { "len": 16, "max": 100, "div": 100, "sign": true, "unit": "percent" }, "name": "State of charge", "suggestedMetric": "stateOfCharge"},
+    {"id": "LAMBORGHINI_SOC_V3",   "path": "Battery", "fmt": { "len": 16, "max": 100, "div": 100, "sign": true, "unit": "percent" }, "name": "State of charge"}
   ]},
 { "hdr": "FC00", "rax": "FE0076", "pri": "17", "tst": "76", "dbg": true, "cmd": {"22": "3DF8"}, "freq": 1,
   "signals": [
